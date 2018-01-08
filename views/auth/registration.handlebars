@@ -4,6 +4,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
 
+                {{#if flash}}
+                  <div class="alert alert-dismissible alert-{{flash.type}}">
+                    <button type="button" class="close"
+                      data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>{{flash.intro}}</strong>
+                    {{{flash.message}}}
+                  </div>
+                {{/if}}
+
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="/register">
 
@@ -20,7 +29,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="" required>
+                                <input id="email" type="email" class="form-control" name="username" value="" required>
 
                             </div>
                         </div>
